@@ -2,7 +2,7 @@
 <p>4102312</p>
 <p>倉儲網站:<a href="https://github.com/41023121/wcm2022">https://github.com/41023121/wcm2022</a> </p>
 <p></p>
-<h2>w13</h2>
+<h1>w14</h1>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 <!-- for ggame -->
@@ -64,12 +64,34 @@ def clear_bd(ev):
     bd.clear()
 # Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
 Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
-Ace.editor.setValue("""import random
-n=10
-for i in range(1,n+1):
-    r=random.randint(1,18)
-    t=random.randint(1,18)
-    print("第"+str(i)+"個紅色方塊座標為("+str(r)+","+str(t)+")")
+Ace.editor.setValue("""with open("https://mde.tw/wcm2022_guide/downloads/w14/1a_stud_old.txt") as fh:
+    rea = fh.readlines()
+newurl = "https://mde.tw/wcm2022_guide/downloads/w14/1a_stud.txt"
+new_data = open(newurl).read()
+new_list = new_data.split('\n')
+
+no_list = lambda list: int((sum([(len(list[i])) for i in range(len(list))]))/3 +1)
+#簡寫一個for迴圈命名為no_list,目的為求出迴圈執行次數
+
+t = list()#命名空清單t
+for k in range(len(rea)):
+    a = rea[k]
+    b = a.split()#分割每一行第k位
+    #print(b)
+    for i in range(0,len(b),4):
+        c = b[i:i+3]#每三字串為一次進行迴圈
+        t.append(c)#加入清單t
+
+print(str(t[0][0])+"\t"+str(t[0][1])+"\t"+str(t[0][2]))
+
+b=-1
+for a in t:
+    b+=1 #確定現在是陣列第幾項
+    c=len(a) #陣列有幾個元素
+    for j in new_list:
+        if j in a: #舊名單裡有新名單的學號
+            print(str(a[0])+"\t"+str(a[c-2])+"\t"+str(a[c-1]))
+            break
 """)
 Ace.editor.scrollToRow(0)
 Ace.editor.gotoLine(0)
@@ -92,7 +114,7 @@ doc['clear_bd'].bind('click', clear_bd)
 <script type="text/python3">
 import beditor
 from browser import document
-url = "https://gist.githubusercontent.com/41023121/f4195e66b8b5ed2241e3914e2568aca8/raw/04a1f72aba9856b04df5d183e672a1a5650edac7/w13"
+url = "https://gist.githubusercontent.com/41023121/302cda72ae029a85b4f825f1b599f6a8/raw/7a0695dfb867a04cfaf9481749c286b6c592c256/14"
 src = open(url).read()
 snake= beditor.editor(src, "kw_editor", "kw_console", "kw__container", "kw_py_src")
 document["snake"].bind("click", snake.prog)
@@ -105,8 +127,7 @@ src = open(url).read()
 snake1= beditor.editor(src, "kw_editor", "kw_console", "kw__container", "kw_py_src")
 document["snake1"].bind("click", snake1.prog)
 </script>
-<p><button id="snake">10個座標</button><button id="snake1">進階</button></p>
-<h1>w13</h1>
+<p><button id="snake">w14</button></p><h1>w13</h1>
 <!-- 導入 brython 程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
