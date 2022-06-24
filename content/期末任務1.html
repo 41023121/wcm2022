@@ -139,7 +139,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w17 << <a href='w17.html'>Previous</a> <a href='w14.html'>Next</a> >> w14<br /><h1>tetris</h1>
+    <div id="tipue_search_content">final << <a href='final.html'>Previous</a> <a href='期末任務2.html'>Next</a> >> 期末任務2<br /><h1>期末任務1</h1>
 <script src="./../cmsimde/static/brython.js"></script>
 <script src="./../cmsimde/static/brython_stdlib.js"></script>
 <!-- for ggame -->
@@ -216,6 +216,8 @@ brython_div = doc["brython_div"]
 brython_div <= canvas
 ctx = canvas.getContext("2d")
 
+ctx.translate(0,canvas.height)#將y方向零點設置在原本高的底部
+ctx.scale(1,-1)#將y方向縮放-1倍
 
 
 colors = [
@@ -462,23 +464,30 @@ doc['clear_bd'].bind('click', clear_bd)
 <div class="col-md-0" height="1" id="graphics-column" width="1"></div>
 <p><!-- ****************************** keyword start --></p>
 <script type="text/python3">
-import beditor
-from browser import document
-url = "https://gist.githubusercontent.com/41023121/9ce210beadc20ecd534399f377d7f9d3/raw/6794773513cd1f3c3ab575ab79f6752c5bb185e3/w15"
-src = open(url).read()
-snake= beditor.editor(src, "kw_editor", "kw_console", "kw__container", "kw_py_src")
-document["snake"].bind("click", snake.prog)
 </script>
-<script type="text/python3">
-import beditor
-from browser import document
-url = "https://gist.githubusercontent.com/41023121/c01c8cf5151eb415ce16e5d3de197561/raw/7902f70d51a74285c6dd33842e21c469c58ae4c2/w13%25E5%25BB%25B6%25E4%25BC%25B8"
-src = open(url).read()
-snake1= beditor.editor(src, "kw_editor", "kw_console", "kw__container", "kw_py_src")
-document["snake1"].bind("click", snake1.prog)
+<script>
+var winkVideoData3 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
 </script>
-<p><button id="snake">tetris</button></p>
-<br />w17 << <a href='w17.html'>Previous</a> <a href='w14.html'>Next</a> >> w14</div>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData3" height="630" muted="true" width="1008">
+<source src="./../downloads/期末任務1.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div>
+<br />final << <a href='final.html'>Previous</a> <a href='期末任務2.html'>Next</a> >> 期末任務2</div>
         
     <!-- footer -->
       <div class="container">
